@@ -1,7 +1,7 @@
 import React, { useRef } from "react";
 import { useGLTF } from "@react-three/drei";
 
-export default function Model(props) {
+export default function Architecture(props) {
   const group = useRef();
   const { nodes, materials } = useGLTF("/architecture-transformed.glb");
   return (

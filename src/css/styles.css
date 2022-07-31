@@ -2,10 +2,7 @@
    box-sizing: border-box;
 }
 
-
-html,
-body,
-#root {
+html, #root{
    width: 100%;
    height: 100%;
    margin: 0;
@@ -13,7 +10,46 @@ body,
 }
 
 body {
+   margin-top: 4vh;
+   background-color: grey;
+   margin-left: 5vw;
+   
+}
+
+.canvas-container{
+   display: grid;
+   position: absolute;
+   grid-template-rows: repeat(14, 1fr);
+   grid-template-columns: repeat(14, 1fr);
    background: white;
-   width: 90%;
-   height: 90%;
+   width: 90vw;
+   height: 90vh;
+   margin: auto;
+}
+
+
+.display{
+   position: inherit;
+   height: 100%;
+   width: 100%;
+}
+
+.overlay{
+   position: relative;
+   background-color: rgb(165, 40, 40, .4);
+   grid-row: 3 span / 15;
+   grid-column: 15 span / 15;
+   min-width: 100%;
+}
+
+
+
+span {
+   display: inline-flex;
+   justify-content: space-between;
+   text-align: center;
+   width: 15%;
+   margin-left: 5vw;
+   /* margin: auto; */
+   color: blue;
 }
