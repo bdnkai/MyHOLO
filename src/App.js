@@ -1,6 +1,4 @@
-import React, { Fragment, Suspense } from "react";
-import { Canvas } from "@react-three/fiber";
-import { OrbitControls } from "@react-three/drei/";
+import HoloState from "./global_context/holo-context/HoloState";
 import HoloContainer from "./HoloContainer";
 import "./css/styles.css";
 import "./css/reset.css"
@@ -8,9 +6,9 @@ import "./css/reset.css"
 
 const App = () =>{
   return(
-    <div>
+    <HoloState>
       <HoloContainer/>
-    </div>
+    </HoloState>
   )
 }
 
