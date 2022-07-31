@@ -1,24 +1,18 @@
-import React, { Fragment, Suspense } from "react";
-import { useState, useReducer } from "react"
+import { Suspense, useContext, useEffect } from "react";
 import { Canvas } from "@react-three/fiber";
-import Architecture from "./gltf-components/Architecture";
 import { OrbitControls } from "@react-three/drei/";
+import HoloContext from './global_context/holo-context/HoloContext'
+import Architecture from "./gltf_components/Architecture";
 import "./css/reset.css"
 import "./css/styles.css";
 
-const initialState = {
-   holo_name: 'RealName',
-   health: 100,
-   happiness: 25,
-   hunger: 25,
-   created_at: null, 
-}
+
 
 const HoloWorld = () => {
-   const [myHolo, setHolo] = useState(initialState)
-
-
-   
+   const {myHolo, setHolo} = useContext(HoloContext)
+   console.log({myHolo})
+ 
+   // const sub = setHolo({...myHolo, holo_coin: 2000})   
    return(
       <div>
          <div>
@@ -34,7 +28,7 @@ const HoloWorld = () => {
                </Canvas>
              </div>
              <div className="holo-buttons">
-                  <button className="open-attributes">X</button>
+                  <button className="open-attributes" onClick={console.log('button works')} >X</button>
                </div>
              <div className="overlay-display" >
                
@@ -46,7 +40,7 @@ const HoloWorld = () => {
                   <div className='happy-bar'></div>
                   <span className="holo-hunger"> Hunger: {myHolo.hunger} </span>
                   <div className='hungry-bar'></div>
-                  <span className="holo-coin"> Holo Coin : {myHolo.health} </span>
+                  <span className="holo-coin"> Holo Coin : {myHolo.holo_coin} </span>
                   <div className='coin-bar'></div>
                </div>
 
