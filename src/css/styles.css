@@ -97,12 +97,12 @@ span{
    font-size: 2vw;
    position: inherit;
    grid-row: 1 span / 20 ;
-   grid-column: 16 span / 21;
+   grid-column: 18 span / 21;
 }
 .coin-bar{
    background-color: rgba(248, 239, 160, 0.445);
    grid-row: 1 span / 20 ;
-   grid-column: 16 span / 20;
+   grid-column: 18 span / 20;
 }
 
 
