@@ -1,7 +1,5 @@
-import React, { Fragment, Suspense } from "react";
-import { Canvas } from "@react-three/fiber";
-import Architecture from "./gltf-components/Architecture";
-import { OrbitControls } from "@react-three/drei/";
+import { useContext } from "react";
+import HoloContext from "./global_context/holo-context/HoloContext"
 import HoloWorld from "./HoloWorld"
 import "./css/styles.css";
 import "./css/reset.css"
@@ -9,9 +7,13 @@ import "./css/reset.css"
 
 
 const HoloContainer = () => {
+const {myHolo, setHolo } = useContext(HoloContext)
+console.log({setHolo})
 
    return (
-      <HoloWorld/>
+      <div>
+         {!myHolo.name && <HoloWorld/>}
+      </div>
    );
 
    
