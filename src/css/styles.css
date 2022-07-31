@@ -28,13 +28,13 @@ body {
 }
 
 
-.display{
+.canvas-display{
    position: inherit;
    height: 100%;
    width: 100%;
 }
 
-.overlay{
+.overlay-display{
    position: relative;
    background-color: rgb(165, 40, 40, .4);
    grid-row: 3 span / 15;
@@ -44,12 +44,12 @@ body {
 
 
 
-span {
+.holo-attributes {
    display: inline-flex;
    justify-content: space-between;
    text-align: center;
-   width: 15%;
+   width: 90vh;
    margin-left: 5vw;
-   /* margin: auto; */
+   margin-right: auto;
    color: blue;
 }
