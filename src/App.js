@@ -1,15 +1,13 @@
-import HoloState from "./global_context/holo-context/HoloState";
-import HoloContainer from "./HoloContainer";
-import "./css/styles.css";
-import "./css/reset.css"
+import HoloState from './global_context/holo-context/HoloState';
+import HoloContainer from './HoloContainer';
 
 
-const App = () =>{
-  return(
-    <HoloState>
-      <HoloContainer/>
-    </HoloState>
-  )
-}
+const App = () => {
+	return (
+		<HoloState>
+			<HoloContainer />
+		</HoloState>
+	);
+};
 
-export default App
+export default App;
