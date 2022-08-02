@@ -1,126 +1,38 @@
 * {
-   box-sizing: border-box;
+	box-sizing: border-box;
 }
 
-html, #root{
-   width: 100%;
-   height: 100%;
-   margin: 0;
-   padding: 0;
+html {
+	/* align-self: center; */
+	width: 100%;
+	height: 100%;
 }
 
-body {
-   margin-top: 4vh;
-   background-color: grey;
-   margin-left: 5vw;
-   
+body,
+#root {
+	background-color: grey;
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	margin-top: 20px;
+	margin-left: 2%;
 }
 
 /*----- Canvas Grid ----- */
-.canvas-container{
-   display: grid;
-   position: absolute;
-   grid-template-rows: repeat(25, 1fr);
-   grid-template-columns: repeat(25, 1fr);
-   background: white;
-   width: 90vw;
-   height: 90vh;
-   margin: auto;
+.canvas-container {
+	display: grid;
+	position: absolute;
+	align-items: center;
+	grid-template-rows: repeat(99, 1fr);
+	grid-template-columns: repeat(49, 1fr);
+	background: white;
+	width: 93vw;
+	height: 93vh;
+	margin: auto;
 }
 
-
-.canvas-display{
-   position: inherit;
-   height: 100%;
-   width: 100%;
-}
-
-/* ----- Overlay Grid  ------ */
-.overlay-display{
-   display: flexbox;
-   grid-row: 7 span / 25;
-   grid-column: 10 span / 7;
-   width: 100%;
-   height: 100%;
-}
-
-.holo-buttons{
-   display: flex;
-   position: inherit;
-   background-color: rgb(0, 0, 0, 0.8);
-   grid-row: 1 span / 26;
-   /* grid-column: 21 span / 21; */
-   height: 100%;
-   width: 100%;
-   margin: auto;
-}
-
-.holo-attributes {
-   display: grid;
-   grid-template-rows: repeat(20 , 1fr);
-   grid-template-columns: repeat(20, 1fr);
-
-   font-size: 1.75vw;
-   position: relative;
-   background-color: rgb(0, 0, 0, 0.8);
-   padding: 5%;
-   height: 100%;
-   width: 100%;
-   color: rgb(255, 255, 255);
-}
-
-span{
-   display: flex;
-   align-items: center;
-}
-
-.holo-name{
-   justify-content: center;
-   grid-row: 2 span/ 3;
-   grid-column: 25 / 1;
-   font-size: 2.2vw;
-}
-.holo-health{
-   
-   grid-row: 2 span / 6 ;
-   grid-column: 19 span / 21;
-}
-.holo-happiness{
-   grid-row: 2 span / 9;
-   grid-column: 17 span / 21;
-}
-.holo-hunger{
-   grid-row: 2 span / 12 ;
-   grid-column: 17 span / 21;
-}
-.holo-coin{
-   font-size: 2vw;
-   position: inherit;
-   grid-row: 1 span / 20 ;
-   grid-column: 18 span / 21;
-}
-.coin-bar{
-   background-color: rgba(248, 239, 160, 0.445);
-   grid-row: 1 span / 20 ;
-   grid-column: 18 span / 20;
-}
-
-
-.health-bar{
-   background-color: rgba(255, 0, 0, 0.25);
-   grid-row: 1 span / 6 ;
-   grid-column: 19 span / 20;
-}
-
-.happy-bar{
-   background-color: rgba(154, 226, 136, 0.164);
-   grid-row: 1 span / 9 ;
-   grid-column: 18 span / 21;
-
-}
-
-.hungry-bar{
-   background-color: rgba(154, 226, 136, 0.164);
-   grid-row: 1 span / 12 ;
-   grid-column: 18 span / 21;
+.canvas-display {
+	position: inherit;
+	height: 100%;
+	width: 100%;
 }

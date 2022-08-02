@@ -1,0 +1,80 @@
+/*------  HOLO BUTTONS  ------*/
+/* -----  buttons are positioned on a grid  ------ */
+
+.holo-buttons {
+	display: grid;
+	position: inherit;
+	grid-row: 94 / span 6;
+	grid-template-columns: repeat(49, 2fr);
+	background-color: rgb(0, 0, 0, 0.85);
+	height: 100%;
+	width: 100%;
+	margin: 0%;
+	padding: 0%;
+}
+
+.display-button,
+.feed-holo,
+.holo-play,
+.holo-perform {
+	display: inherit;
+	position: absolute;
+	justify-content: center;
+	align-items: center;
+	align-content: center;
+	background-color: rgba(0, 0, 0, 0);
+	height: 100%;
+	width: 100%;
+	border: 0;
+	cursor: pointer;
+}
+
+.display-button {
+	grid-column: 1 / span 6;
+}
+.holo-play {
+	grid-column: 13 / span 6;
+}
+.feed-holo {
+	grid-column: 20 / span 6;
+}
+.holo-perform {
+	grid-column: 27 / span 6;
+}
+
+/*-----  BUTTON IMG ICONS  ------ */
+.monster-icon,
+.food-icon,
+.play-icon,
+.perform-icon {
+	display: flex;
+	justify-content: center;
+}
+
+.monster-icon {
+	max-height: 60px;
+	max-width: 60px;
+	min-height: 60px;
+	min-width: 60px;
+}
+
+.food-icon {
+	max-height: 60px;
+	max-width: 60px;
+	min-height: 60px;
+	min-width: 60px;
+}
+
+.play-icon {
+	max-height: 65px;
+	max-width: 75px;
+	min-height: 65px;
+	min-width: 75px;
+}
+.perform-icon {
+	margin-top: 1px;
+	max-height: 55px;
+	max-width: 60px;
+	min-height: 50px;
+	min-width: 55px;
+}
