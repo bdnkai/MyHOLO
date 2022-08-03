@@ -1,8 +1,8 @@
-import { Suspense, useContext, useEffect } from 'react';
+import { Suspense, useContext, useEffect, useRef } from 'react';
 import { Canvas } from '@react-three/fiber';
-import { OrbitControls } from '@react-three/drei/';
+import { OrbitControls, Stage } from '@react-three/drei/';
 import HoloContext from './global_context/holo-context/HoloContext';
-import Architecture from './gltf_components/Architecture';
+import { Model } from './gltf_components/MyHoloTesting';
 import MonsterIcon from './assets/MonsterIcon.png';
 import FoodIcon from './assets/FoodIcon.png';
 import PerformIcon from './assets/PerformIcon.png';
@@ -12,20 +12,27 @@ import holoDisplayCSS from './css/holo-panel.css';
 
 const HoloWorld = () => {
 	const { myHolo, display, feed, play, perform } = useContext(HoloContext);
-	console.log(myHolo.overlay);
+	const ref = useRef();
+	console.log();
 	return (
 		<div>
 			<div>
 				{/*--------  3D ANIMATIONS AND MODELS  ---------*/}
 				<div className='canvas-container'>
 					<div className='canvas-display'>
-						<Canvas>
-							<OrbitControls />
-							<ambientLight intensity={0} />
-							<directionalLight intensity={0.5} />
-							<Suspense fallback={null}>
-								<Architecture />
+						<Canvas shadows dpr={[1, 2]} camera={{ fov: 50 }}>
+							<Suspense fallback={1}>
+								<Stage
+									controls={ref}
+									preset='portrait'
+									intensity={0}
+									environment='dawn'>
+									false
+									<Model />
+									false
+								</Stage>
 							</Suspense>
+							<OrbitControls ref={ref} />
 						</Canvas>
 					</div>
 

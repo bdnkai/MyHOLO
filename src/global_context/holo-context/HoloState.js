@@ -4,23 +4,22 @@ import HoloContext from './HoloContext';
 import holoReducer from './HoloReducer';
 import '../../css/styles.css';
 
-//------ initial state ------//
-const initialState = {
-	myHolo: {
-		holo_name: 'Lorem',
-		health: 100,
-		isAlive: true,
-		happiness: 100,
-		hunger: 100,
-		holo_coin: 100000,
-	},
-};
-
 const HoloState = (component_receiver) => {
+	//------ initial state ------//
+	const initialState = {
+		myHolo: {
+			holo_name: 'Lorem',
+			health: 100,
+			isAlive: true,
+			happiness: 100,
+			hunger: 100,
+			holo_coin: 100000,
+		},
+	};
+
 	//------- useReducer to manage state ------//
 	const [state, dispatch] = useReducer(holoReducer, initialState);
-	
-	
+
 	//------  TOGGLE_ DISPLAY  ------//
 	const displayInfo = (myHolo) => {
 		dispatch({
@@ -53,7 +52,7 @@ const HoloState = (component_receiver) => {
 		});
 	};
 
-	//------ useMemo to Memoize State & Actions from useReducer  ------//
+	//---useMemo to Memoize State & Actions from useReducer---//
 	const updateHolo = useMemo(
 		() => ({
 			myHolo: state.myHolo,
