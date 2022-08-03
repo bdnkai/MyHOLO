@@ -3,6 +3,8 @@ import { TOGGLE_DISPLAY, FEED, PLAY, PERFORM } from './useActions';
 import HoloContext from './HoloContext';
 import holoReducer from './HoloReducer';
 import '../../css/styles.css';
+import '../../css/holoPanel.css';
+import '../../css/holoButtons.css';
 
 const HoloState = (component_receiver) => {
 	//------ initial state ------//

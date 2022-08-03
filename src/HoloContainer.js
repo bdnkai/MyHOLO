@@ -1,5 +1,5 @@
 import { useContext } from 'react';
-import HoloContext from './global_context/holo-context/HoloContext';
+import HoloContext from './globalContext/holoContext/HoloContext';
 import HoloWorld from './HoloWorld';
 
 const HoloContainer = () => {

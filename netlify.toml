@@ -6,16 +6,16 @@
 
   ## Uncomment to use this redirect for Single Page Applications like create-react-app.
   ## Not needed for static site generators.
-  [redirects]
+[redirects]
     from = "/*"
     to = "/index.html"
     status = 200
 
   ## (optional) Settings for Netlify Dev
   ## https://github.com/netlify/cli/blob/main/docs/netlify-dev.md#project-detection
-  [dev]
+[dev]
     command = "npm run start"
     port = 3000 
-    publish = "/*" # Folder with the static content for _redirect file
+    publish = "/*" 
 
   ## more info on configuring this file: https://docs.netlify.com/configure-builds/file-based-configuration/

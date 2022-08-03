@@ -1,14 +1,12 @@
 import { Suspense, useContext, useEffect, useRef } from 'react';
 import { Canvas } from '@react-three/fiber';
 import { OrbitControls, Stage } from '@react-three/drei/';
-import HoloContext from './global_context/holo-context/HoloContext';
-import { Model } from './gltf_components/MyHoloTesting';
+import HoloContext from './globalContext/holoContext/HoloContext';
+import { Model } from './gltfComponents/MyHoloTesting';
 import MonsterIcon from './assets/MonsterIcon.png';
 import FoodIcon from './assets/FoodIcon.png';
 import PerformIcon from './assets/PerformIcon.png';
 import PlayIcon from './assets/PlayIcon.png';
-import holoButtonsCSS from './css/holo-buttons.css';
-import holoDisplayCSS from './css/holo-panel.css';
 
 const HoloWorld = () => {
 	const { myHolo, display, feed, play, perform } = useContext(HoloContext);
