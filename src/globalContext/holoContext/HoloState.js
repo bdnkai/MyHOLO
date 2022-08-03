@@ -1,5 +1,5 @@
-import { useContext, useState, useMemo, useReducer } from 'react';
-import { TOGGLE_DISPLAY, FEED, PLAY, PERFORM } from './useActions';
+import { useMemo, useReducer } from 'react';
+import { CHANGE_NAME, FEED, PLAY, PERFORM } from './useActions';
 import HoloContext from './HoloContext';
 import holoReducer from './HoloReducer';
 import '../../css/styles.css';
@@ -13,9 +13,9 @@ const HoloState = (component_receiver) => {
 			holo_name: 'Lorem',
 			health: 100,
 			isAlive: true,
-			happiness: 100,
-			hunger: 100,
-			holo_coin: 100000,
+			happiness: 25,
+			hunger: 25,
+			holo_coin: 100,
 		},
 	};
 
@@ -25,7 +25,7 @@ const HoloState = (component_receiver) => {
 	//------  TOGGLE_ DISPLAY  ------//
 	const displayInfo = (myHolo) => {
 		dispatch({
-			type: TOGGLE_DISPLAY,
+			type: CHANGE_NAME,
 			payload: myHolo,
 		});
 	};
@@ -63,7 +63,7 @@ const HoloState = (component_receiver) => {
 			play: holoPlays,
 			perform: holoPerforms,
 		}),
-		[state, dispatch]
+		[{ myHolo: state.myHolo }]
 	);
 
 	return (

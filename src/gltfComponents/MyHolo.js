@@ -7,10 +7,10 @@ import { useGLTF, useAnimations } from '@react-three/drei';
 
 export function Model(props) {
 	const group = useRef();
-	const { nodes, materials, animations } = useGLTF('/myHolotesting.gltf');
+	const { nodes, materials, animations } = useGLTF('/myHolo.gltf');
 	const { actions } = useAnimations(animations, group);
 
-	console.log({ actions, animations });
+	
 	return (
 		<group ref={group} {...props} dispose={null}>
 			<group
@@ -3448,4 +3448,4 @@ export function Model(props) {
 	);
 }
 
-useGLTF.preload('/myHolotesting.gltf');
+useGLTF.preload('/myHolo.gltf');

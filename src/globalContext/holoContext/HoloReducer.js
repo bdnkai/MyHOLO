@@ -1,41 +1,44 @@
-import { FEED, PLAY, PERFORM, TOGGLE_DISPLAY } from './useActions';
+import { FEED, PLAY, PERFORM, CHANGE_NAME } from './useActions';
+
+
+
 
 const holoReducer = (state, action) => {
 	switch (action.type) {
-		case TOGGLE_DISPLAY:
-			console.log('toggle here');
-			return {};
-
+		// -------  CASE: NAME CHANGE ------- //
+		case CHANGE_NAME:
+			return {
+				...state.myHolo,
+				holo_name: [...state.myHolo.name, action.payload],
+			};
+		//-------  CASE: FEED  --------//
 		case FEED:
-			console.log('feed here');
 			return {
 				...state,
 				...state.myHolo,
-				hunger: (state.myHolo.hunger += 10),
-				happiness: (state.myHolo.happiness += 5),
+				hunger: (state.myHolo.Hunger -= 10),
+				happiness: (state.myHolo.happiness += 10),
 				holo_coin: (state.myHolo.holo_coin -= 1000),
 			};
-			console.log(state.myHolo);
+		//------  CASE: PLAY  -------//
 		case PLAY:
-			console.log('play here');
 			return {
 				...state,
 				...state.myHolo,
-				hunger: (state.myHolo.hunger -= 25),
+				hunger: (state.myHolo.hunger += 25),
 				happiness: (state.myHolo.happiness += 10),
 			};
+		// ------  CASE: PERFORM ------//
 		case PERFORM:
-			console.log('dance here');
 			return {
 				...state,
 				...state.myHolo,
 				holo_coin: (state.myHolo.holo_coin += 1000),
-				hunger: (state.myHolo.hunger -= 25),
+				hunger: (state.myHolo.hunger += 25),
 				happiness: (state.myHolo.happiness -= 25),
 			};
-
 		default:
-			return state;
+			return { state };
 	}
 };
 
