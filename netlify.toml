@@ -14,7 +14,7 @@
   ## (optional) Settings for Netlify Dev
   ## https://github.com/netlify/cli/blob/main/docs/netlify-dev.md#project-detection
   [dev]
-    command = "npm start"
+    command = "npm run start"
     port = 3000 
     publish = "/*" # Folder with the static content for _redirect file
 
