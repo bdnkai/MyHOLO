@@ -1,4 +1,4 @@
-# MyHolo - raise your own Holo
+# MyHolo - Raise Your Holo Today
 
 An application that allows you to raise your own virtual Holo. Users are able to feed it, play with it, and interact with it. Being a good Holo owner will be rewarded with coins, while bad one's will experience the lost of their Holo forever! This application will be powered with React on the front-end and renders ThreeJS Library with React-Three-Fiber.
 
