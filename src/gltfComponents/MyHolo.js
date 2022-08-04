@@ -9,8 +9,8 @@ export function Model(props) {
 	const group = useRef();
 	const { nodes, materials, animations } = useGLTF('/myHolo.gltf');
 	const { actions } = useAnimations(animations, group);
+	console.log(actions);
 
-	
 	return (
 		<group ref={group} {...props} dispose={null}>
 			<group
