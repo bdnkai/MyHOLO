@@ -14,7 +14,7 @@ const holoReducer = (state, action) => {
 			return {
 				...state,
 				...state.myHolo,
-				hunger: [(state.myHolo.Hunger -= 10)],
+				hunger: [(state.myHolo.hunger -= 10)],
 				happiness: [(state.myHolo.happiness += 10)],
 				holo_coin: [(state.myHolo.holo_coin -= 1000)],
 			};
@@ -23,20 +23,20 @@ const holoReducer = (state, action) => {
 			return {
 				...state,
 				...state.myHolo,
-				hunger: (state.myHolo.hunger += 25),
-				happiness: (state.myHolo.happiness += 10),
+				hunger: [(state.myHolo.hunger -= 25)],
+				happiness: [(state.myHolo.happiness += 10)],
 			};
 		// ------  CASE: PERFORM ------//
 		case PERFORM:
 			return {
 				...state,
 				...state.myHolo,
-				holo_coin: (state.myHolo.holo_coin += 1000),
-				hunger: (state.myHolo.hunger += 25),
-				happiness: (state.myHolo.happiness -= 25),
+				holo_coin: [(state.myHolo.holo_coin += 1000)],
+				hunger: [(state.myHolo.hunger += 25)],
+				happiness: [(state.myHolo.happiness -= 25)],
 			};
 		default:
-			return state;
+			return state.myHolo;
 	}
 };
 
