@@ -46,7 +46,6 @@ const HoloWorld = () => {
 						<button className='holo-play' onClick={play}>
 							<img src={PlayIcon} alt='play-icon' className='play-icon' />
 						</button>
-
 						{/*------  PERFORM BUTTON  ------*/}
 						<button className='holo-perform' onClick={perform}>
 							<img

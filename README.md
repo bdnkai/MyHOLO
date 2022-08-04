@@ -32,7 +32,7 @@ An application that allows you to raise your own virtual Holo. Users are able to
 - React-Three/ Drei
 - JavaScript
 - ThreeJS
-- GLTFJSX
+- glTFJSX
 - [glTF Viewer](https://gltf-viewer.donmccurdy.com/)
 - [glTF Converter & viewer](https://gltf.pmnd.rs/)
 - VSCode
@@ -87,15 +87,15 @@ An application that allows you to raise your own virtual Holo. Users are able to
 
 ## Installation
 
-npm install
-npm install @react-three/fiber
-npm install @react-three/drei
+npm install<br />
+npm install @react-three/fiber<br />
+npm install @react-three/drei<br />
 
 ---
 
 ## Unsolved / Bugs:
 
-- useReducer increments double the payload.
+[x] ~~useReducer increments double the payload.~~ Fixed
 
 ---
 
