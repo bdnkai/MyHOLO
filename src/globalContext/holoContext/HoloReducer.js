@@ -33,9 +33,9 @@ const holoReducer = (state, action) => {
 				...state,
 				...state.myHolo,
 				hunger:
-					state.myHolo.hunger > 0
-						? [(state.myHolo.hunger -= 5)]
-						: (state.myHolo.hunger = 0),
+					state.myHolo.hunger < 100
+						? [(state.myHolo.hunger += 5)]
+						: (state.myHolo.hunger = 100),
 				happiness:
 					state.myHolo.happiness < 100
 						? [(state.myHolo.happiness += 5)]
