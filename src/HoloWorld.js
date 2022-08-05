@@ -1,15 +1,14 @@
-import { Suspense, useContext, useEffect, useRef } from 'react';
+import { Suspense, useContext, useRef, useState } from 'react';
 import { Canvas } from '@react-three/fiber';
 import { OrbitControls, Stage } from '@react-three/drei/';
 import HoloContext from './globalContext/holoContext/HoloContext';
 import { Model } from './gltfComponents/MyHolo';
-import MonsterIcon from './assets/MonsterIcon.png';
 import FoodIcon from './assets/FoodIcon.png';
 import PerformIcon from './assets/PerformIcon.png';
 import PlayIcon from './assets/PlayIcon.png';
-import { AnimationAction } from 'three';
 
 const HoloWorld = () => {
+	const [action, setAction] = useState("Wave")
 	const { myHolo, display, feed, play, perform } = useContext(HoloContext);
 	const ref = useRef();
 	console.log();
@@ -20,23 +19,22 @@ const HoloWorld = () => {
 				<div className='canvas-container'>
 					<div className='canvas-display'>
 						<Canvas shadows dpr={[1, 2]} camera={{ fov: 10 }}>
-							<Suspense fallback={0}>
+							<Suspense fallback={null}>
 								<Stage
 									controls={ref}
 									preset='portrait'
 									intensity={0}
 									environment='dawn'>
-									<Model />
+									<Model action={action}/>
 								</Stage>
 							</Suspense>
 							<OrbitControls />
 						</Canvas>
 					</div>
-
 					{/*-------  BUTTONS STARTS HERE  -------- */}
 					<div className='holo-buttons'>
 						{/* --- DISPLAY PANEL ---- */}
-
+						<button onClick={()=> setAction("Wave")}>TEST</button>
 						{/* ------  FEED BUTTON  ------ */}
 						<button className='feed-holo' onClick={feed}>
 							<img src={FoodIcon} alt='food-icon' className='food-icon' />
