@@ -7,36 +7,62 @@ const holoReducer = (state, action) => {
 			return {
 				...state,
 				...state.myHolo,
-				holo_name: [...state.myHolo.name, action.payload],
+				holo_name: [...state.myHolo.holo_name, action.payload],
 			};
 		//-------  CASE: FEED  --------//
 		case FEED:
 			return {
 				...state,
 				...state.myHolo,
-				hunger: [(state.myHolo.hunger -= 10)],
-				happiness: [(state.myHolo.happiness += 10)],
-				holo_coin: [(state.myHolo.holo_coin -= 1000)],
+				hunger:
+					state.myHolo.hunger > 0
+						? [(state.myHolo.hunger -= 5)]
+						: (state.myHolo.hunger = 0),
+				happiness:
+					state.myHolo.happiness < 100
+						? [(state.myHolo.happiness += 5)]
+						: (state.myHolo.happiness = 100),
+				holo_coin:
+					state.myHolo.holo_coin > 0
+						? [(state.myHolo.holo_coin -= 250)]
+						: (state.myHolo.holo_coin = 0),
 			};
 		//------  CASE: PLAY  -------//
 		case PLAY:
 			return {
 				...state,
 				...state.myHolo,
-				hunger: [(state.myHolo.hunger -= 25)],
-				happiness: [(state.myHolo.happiness += 10)],
+				hunger:
+					state.myHolo.hunger > 0
+						? [(state.myHolo.hunger -= 5)]
+						: (state.myHolo.hunger = 0),
+				happiness:
+					state.myHolo.happiness < 100
+						? [(state.myHolo.happiness += 5)]
+						: (state.myHolo.happiness = 100),
 			};
 		// ------  CASE: PERFORM ------//
 		case PERFORM:
 			return {
 				...state,
 				...state.myHolo,
-				holo_coin: [(state.myHolo.holo_coin += 1000)],
-				hunger: [(state.myHolo.hunger += 25)],
-				happiness: [(state.myHolo.happiness -= 25)],
+				holo_coin:
+					state.myHolo.holo_coin >= 0
+						? [(state.myHolo.holo_coin += 250)]
+						: (state.myHolo.holo_coin = 0),
+				hunger:
+					state.myHolo.hunger < 100
+						? [(state.myHolo.hunger += 5)]
+						: (state.myHolo.hunger = 100),
+				happiness:
+					state.myHolo.happiness > 0
+						? [(state.myHolo.happiness -= 5)]
+						: (state.myHolo.happiness = 0),
 			};
 		default:
-			return state.myHolo;
+			return {
+				...state.myHolo,
+			};
 	}
 };
 

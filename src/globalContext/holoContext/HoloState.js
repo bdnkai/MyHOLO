@@ -13,9 +13,9 @@ const HoloState = (component_receiver) => {
 			holo_name: 'Lorem',
 			health: 100,
 			isAlive: true,
-			happiness: 25,
-			hunger: 25,
-			holo_coin: 100,
+			happiness: 100,
+			hunger: 100,
+			holo_coin: 10000,
 		},
 	};
 
