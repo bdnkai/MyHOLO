@@ -9,15 +9,15 @@ import { AnimationAction, AnimationObjectGroup } from 'three';
 export function Model({ props, action }) {
 	const group = useRef();
 	const previousAction = usePrevious(action);
-	const { nodes, materials, animations } = useGLTF('/myHolo.gltf');
+	const { nodes, materials, animations } = useGLTF('/myHolo.gltf')
 	const { actions } = useAnimations(animations, group);
 	useEffect(() => {
 		if (previousAction) {
-		  actions[previousAction].fadeOut(0.2);
+		  actions[previousAction].fadeOut(0.1);
 		  actions[action].stop();
 		}
 		actions[action].play();
-		actions[action].fadeIn(0.2);
+		actions[action].fadeIn(0.1);
 	 }, [actions, action, previousAction]);
 	return (
 		<group ref={group} {...props} dispose={null}>
