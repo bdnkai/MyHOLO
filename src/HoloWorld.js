@@ -34,7 +34,6 @@ const HoloWorld = () => {
 					{/*-------  BUTTONS STARTS HERE  -------- */}
 					<div className='holo-buttons'>
 						{/* --- DISPLAY PANEL ---- */}
-						<button onClick={()=> setAction("Wave")}>TEST</button>
 						{/* ------  FEED BUTTON  ------ */}
 						<button className='feed-holo' onClick={feed}>
 							<img src={FoodIcon} alt='food-icon' className='food-icon' />

@@ -2,14 +2,14 @@
 /*--------   PANEL DISPLAY  -------*/
 .overlay {
 	display: flex;
-	grid-row: 54 / span 40;
+	grid-row: 55 /span 70 ;
 	grid-column: 1 / span 17;
 	width: 80%;
-	height: 60%;
+	height: 74%;
 }
 
 .holo-attributes {
-	display: none;
+	display: grid;
 	grid-template-rows: repeat(22, 1fr);
 	grid-template-columns: repeat(21, 1fr);
 	font-size: 2vw;
