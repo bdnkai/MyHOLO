@@ -9,7 +9,7 @@ import PlayIcon from './assets/PlayIcon.png';
 
 const HoloWorld = () => {
 	const [action, setAction] = useState("Wave")
-	const { myHolo, display, feed, play, perform } = useContext(HoloContext);
+	const { myHolo, feed, play, perform } = useContext(HoloContext);
 	const ref = useRef();
 	console.log();
 	return (

@@ -15,14 +15,14 @@ const HoloState = (component_receiver) => {
 			isAlive: true,
 			happiness: 100,
 			hunger: 100,
-			holo_coin: 10000,
+			holo_coin: 5000,
 		},
 	};
 
 	//------- useReducer to manage state ------//
 	const [state, dispatch] = useReducer(holoReducer, initialState);
 
-	//------  TOGGLE_ DISPLAY  ------//
+	//------  CHANGE_NAME  ------//
 	const displayInfo = (myHolo) => {
 		dispatch({
 			type: CHANGE_NAME,
